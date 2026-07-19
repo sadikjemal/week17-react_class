@@ -1,0 +1,189 @@
+7.1 - Introduction: why are we learning ReactJS?  
+        -React learning curve  
+        -React has an easier learning curve  
+        -Developers don't need to spend a ton of time re-learning the programming language.  
+        -React is built on what developers already know -> JavaScript.  
+
+    -React has high demand  
+        -Efficient performance (fast)  
+        -Reusable UI components  
+        -Can create large web applications that can change data, without reloading the page  
+        -React can be used to create mobile applications (React Native) 
+        -All in all, main purpose of React is to be fast, scalable, and simple
+
+7.2 - What is ReactJS?
+    -Definition
+        - A JavaScript library for building user interfaces
+            -Like jQuery
+
+        -React is a JavaScript library that aims to increase the performance of applications and simplify the development of visual interfaces
+
+    - React.js is used for handling the view layer of the full MVC stack for web and mobile apps
+   
+        - i.e https://www.freecodecamp.org/news/content/images/2022/06/Annotation-2022-06-20-103520.png
+    
+    -What is MVC (Model-View-Controller)
+   
+        - MVC is a software design pattern programers use when they build an application
+
+            i.e - https://www.freecodecamp.org/news/content/images/2022/06/mvc1.png
+
+    -MVC is an architectural pattern consisting of three parts: Model, View, Controller.
+
+     -Model
+        -Handles data logic
+            -Interacts with database with queries
+
+    -View
+        -It displays the information from the model to the user
+        -Handles the user interface (UI)
+
+    -Controller
+        -It controls the data flow into a model object and updates the view whenever data changes      
+
+7.3 - How does ReactJS work? What makes it faster?
+
+    -React.js
+        -A library that is responsible for creating the UI and managing/tracking changes  
+
+    -react-dom.js  
+        -A library that is responsible to actually render UI in the browser  
+
+    -ReactDOM (Virtual DOM)  
+        -A virtual DOM is a lightweight JavaScript representation of the DOM (Copy of the "real" DOM)  
+        -Updating the virtual DOM is comparatively faster than updating the actual DOM  
+        -Therefore React is free to make unnecessary changes to the virtual DOM relatively cheaply compared to "real" DOM  
+
+        i.e - Virtual DOM works in three simple steps  
+
+            1, Whenever any underlying data changes, the entire UI is re-rendered in Virtual DOM representation  
+        
+            2,Then the difference between the previous DOM representation and the new one is calculated
+
+            3,Once the calculations are done, the real DOM will be updated with only the things that have actually changed.
+
+    -React follows batch update to update the real DOM:
+        -In React, updates to the real DOM are sent in batches, instead of sending updates for every single change in state.
+        -The UI won't be updated until after your event handler, and any code in it, completes.
+         This behavior, also known as batching, makes your React app run much faster.
+
+7.4 - Generating HTML using vanilla JavaScript vs generating HTML using ReactJS
+
+    -Generating HTML using vanilla JavaScript (same as DOM manipulation on phase-2)
+        -On HTML file
+            -Create the boilerplate
+            -Have one container element with an ID on your HTML
+            -Attach your js file to your HTML
+
+    -On JS file
+        -Create an element using document.createElement("ELEMENT-TAG")
+        -Insert some content to the created element using "textContent" property
+        -Append the created element to the container element that is on the HTML using its ID
+    
+    -Generating HTML using React
+        -On HTML file
+            -Create the boilerplate
+            -Have one container element with an ID on your HTML
+            -Attach React and ReactDOM libraries on HTML
+            -Attach your react JS file to your HTML
+
+    -On react JS file
+        -Create react element (Done by the React library)
+            -React element is the smallest entity in react
+            -React element is a JavaScript object that describes the DOM element in memory
+
+            -Syntax: React.createElement(type, [props], [...children]);
+
+                 -type – is the type of element you want to create  
+                    -i.e (div, ul, li, section ...)  
+
+                -props – is a JavaScript object that contains properties or data required to construct a DOM.  
+                -i.e (id, class, href, src...)
+
+            -children or content – are children or content to display other nested elements.
+                -i.e (Any text)
+            
+            -Example:
+
+7.5 - Getting started with React development: installing React, configuring npm, using create-react-app
+
+-pre-requirements for create-react-app
+    -Configure npm & npx by
+        -Installing NODE (You should already have it by now)
+        -npm & npx comes with node
+1. create-react-app
+    -Gives you the boilerplate for the react development  
+        -It installs the latest version of  
+            -React and React-DOM  
+            -Babel  
+            -react-scripts
+                -Development dependency that manages all other dev dependencies that start, test and build your app.
+    -Syntax to create an app
+        npx create-react-app my-app
+
+    -Syntax to run the app
+        -cd my-app
+        -npm start        
+
+2. Vite
+    -https://vitejs.dev/
+    -npm create vite@latest [my-app-name] 
+
+
+7.6 – Getting started with React Development: understanding the file structure of a react app
+
+    -Your main index.html file under public folder
+        -<div id="root"></div>
+            -Every component comes and gets rendered on the div element with root ID
+    
+    -node_modules folder
+        -contains all of the dependencies that you will use to build a react app
+    
+    -package.json and package-lock.json files
+        -created by npm to manage the packages you use on the project
+    
+    -src folder
+        -working file – where we write our react code
+    
+        -index.js file (main.jsx file on Vite)
+            -the entry point that renders your components and renders them on the output div (#root)
+    
+        -App.js file
+            -Is where we actually write our components
+
+7.7 – What is JSX (JavaScript XML)?
+
+    -What is JSX? (JavaScript XML) -> JS + HTML
+        -Is a syntax extension to JavaScript
+        -Used in react
+
+    -Why do we need JSX?
+        -JSX makes it easier to write or add HTML in React
+        -JSX allows us to write HTML elements without using createElement
+        -As JSX is an expression
+            -We can use it inside of if statements and for loops
+            -Assign it to variables
+            -Accept it as arguments
+            -Return it from functions
+    -What is XML?
+        -Definition
+            -Is a Markup language just like HTML
+            -A way of tagging data in an organized format
+            -The tags are created by the writer
+                <test>
+                    <user>
+                    </user>
+                    <city>New York</city>
+                </test>
+
+    -Rules for JSX/XML
+        -All JSX must have a root element (one element)
+        -All tags must be closed
+        -All tags must be properly nested
+        -Tag names are case sensitive
+        -Tag names cannot contain spaces
+        -The attribute 'class' has to be changed to 'className'
+
+8.1 - Introduction to react components: why do we build Apple website using react components?
+        -Why do the projects in React
+            -It increases your chance of getting hired
