@@ -187,3 +187,80 @@
 8.1 - Introduction to react components: why do we build Apple website using react components?
         -Why do the projects in React
             -It increases your chance of getting hired
+8.2 - React components: definition and types
+    -What are components?
+        -Components are like functions that return JSX elements.
+        -Components are the building blocks of any React app.
+        -Components are independent and reusable bits of code.
+
+    -Conventions on components
+        -Component name must start in uppercase  
+        -Keep one component in one file  
+        -Keep the file and component/function name the same
+
+    -Types of components  
+        1-Functional components  
+        2-Class based components
+    -Functional components  
+        -Is a JavaScript function that may or may not take a data(properties) as a parameter but returns a React element (JSX).
+
+    Example:
+        function Car() {
+        return (
+
+        Hi, I am a Car! 
+
+        )
+        }
+
+8.3 - Function based components: steps to create functional components
+
+    -Steps to create a functional component
+        1.Create a react app
+            npx create-react-app my-app
+            
+            or 
+
+            npm create vite@latest my-app-name
+             -Select a framework:
+│               -React
+            -Select a variant:
+│               -JavaScript
+            -Which linter to use?
+│               -ESLint
+            -Install with npm and start now?
+│               -Yes
+            -cd my-app-name
+            -npm install
+            -npm run dev
+
+        =>if you want other port , go to vite.confi.json
+            -type  
+                server : {
+                        port : 9000.
+                    }   
+        -delete all files or contents what you not want
+        -clean App.jsx until you see only 
+                    import './App.css'
+                    function App() {
+                    return (
+                        <>
+                        <h1>Working fine</h1>
+                        </>
+                    )
+                    }
+                    export default App
+
+
+        2.Inside the src folder create a 'js' or 'jsx' file (component)
+           -short cut  rfce
+           - delet first line (react)
+           -import Header from './component/Header' on App.jsx
+           - <Header/>  on app.js to see on browser
+           -what you do everthing in header.jsx is in one div or (<> </>)
+
+        3.Inside that file, create a function that returns a jsx element
+
+        4.Export the function you created
+
+        5.Import it to your parent component and render it there.

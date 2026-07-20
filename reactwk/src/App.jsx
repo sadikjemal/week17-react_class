@@ -4,14 +4,18 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 
+import Car from './Conponents/Car' 
+
 function App() {
   const [count, setCount] = useState(0)
 
-  return (
+  return ( 
     <>
       
           <h1>React Week/17</h1>
           <div>
+
+            <Car/>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quasi consequuntur mollitia eveniet corporis, eius aliquam quam ipsam labore saepe accusamus quia architecto doloremque. Sapiente possimus eius totam nostrum aliquam!
             </p>
@@ -23,7 +27,7 @@ function App() {
           <div>
             { 
               2 + 4
-            }
+            } 
           </div>
         
     </>
